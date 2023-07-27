@@ -21,7 +21,7 @@ git log --oneline, 브랜치 자기 이름인지 확인
 
 git add .
 
-git commit -am "Add ~2023.07.26 study"
+git commit -am "Add [날짜] study"
 
 git push
 
