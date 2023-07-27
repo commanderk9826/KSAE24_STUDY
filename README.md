@@ -7,13 +7,13 @@ cd KSAE24_STUDY
 
 git log --oneline
 
-git checkout -b 이채훈
+git checkout -b [본인 이름]
 
 git add .
 
-git commit -am "Add ~2023.07.26 study"
+git commit -am "Add [날짜] study"
 
-git push -u origin 이채훈
+git push -u origin [본인 이름]
 
 2. 이후 스터디 내용 업로드할때
 git 
