@@ -16,7 +16,7 @@ git commit -am "Add [날짜] study"
 git push -u origin [본인 이름]
 
 2. 이후 스터디 내용 업로드할때
-git 
+
 git log --oneline, 브랜치 자기 이름인지 확인
 
 git add .
