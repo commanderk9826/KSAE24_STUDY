@@ -18,7 +18,7 @@ Git status : 저장소 파일의 상태 출력
 Git status -s : 저장소 파일 상태를 간략하게 표시
 Git log : 저장소의 커밋 히스토리(로그, 이력)를 출력
 Git log –pretty=oneline : 로그 출력 시 커밋을 한 줄로 간략하게 표시(--pretty  옵션 사용)
-Git log –onelinf : 로그 출력 시 커밋을 한 줄로 표시(해시도 앞자리 7글자만 출력)
+Git log –oneline : 로그 출력 시 커밋을 한 줄로 표시(해시도 앞자리 7글자만 출력)
 Git log –graph : 로그를 그래프 형태로 출력
 
 Git show : 가장 최근 커밋의 상세 정보 출력
