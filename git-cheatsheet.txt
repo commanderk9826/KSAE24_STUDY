@@ -217,4 +217,4 @@ cherry-pick
 - git cherry-pick --continue : 충돌 해결 후 cherry-pick 진행
 
 *2023.08.01 
-git push -f [원격저장소 이름][로컬 저장소 브랜치] : 강제 push <-규현팀장님 say
+git push -f [원격저장소 이름][로컬 저장소 브랜치] : 강제 push, but 여러사람이 쓰는 원격저장소에서는 사용 지양, 혼자쓰는 레퍼지토리에서만 쓸 것, 아마 커밋 해시 순서가 꼬이는 것으로 예상됨.<-규현팀장님 say
