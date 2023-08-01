@@ -215,3 +215,6 @@ cherry-pick
 - git cherry-pick [시작 지정의 커밋 해시].. [끝 지점의 커밋 해시] : 해당 구간의 커밋을 한번에 추가
 - git cherry-pick --abort : 충돌이 발생했을 때 cherry-pick 취소
 - git cherry-pick --continue : 충돌 해결 후 cherry-pick 진행
+
+*2023.08.01 
+git push -f [원격저장소 이름][로컬 저장소 브랜치] : 강제 push <-규현팀장님 say
