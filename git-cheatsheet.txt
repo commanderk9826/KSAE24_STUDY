@@ -1,0 +1,220 @@
+# 명령어 정리
+Git init : 저장소(Repository) 생성
+Git config user.name “[작성자 이름]” : 사용자 이름 설정
+Git config user.email “[이메일 계정]” : 사용자 이메일 설정
+Git config –list : 저장소 설정 전체 출력
+Git config [설정 항목] : 해당 항목 설정 값 출력(ex : git config user.name)
+Git help [명령어] : 도움말
+
+Git status : 저장소의 상태 정보 출력
+Git add [파일 이름] : 해당 파일을 Staging Area에 올리기
+Git add[디렉터리 이름] : 해당 디렉터리 안에 수정된 모든 파일을 Staging Area에 올리기
+Git add . : Working Directory 안에 추가, 수정된 모든 파일을 Staging Area에 올리기
+Git commit : 이력 저장, 커밋->i->commit->esc->:wq
+Git commit -m “[메시지]” : vim을 사용하지 않고 인라인으로 메시지를 추가하여 커밋
+Git commit -am “[메시지]” : git add와 git commit을 한꺼번에 명령
+
+Git status : 저장소 파일의 상태 출력
+Git status -s : 저장소 파일 상태를 간략하게 표시
+Git log : 저장소의 커밋 히스토리(로그, 이력)를 출력
+Git log –pretty=oneline : 로그 출력 시 커밋을 한 줄로 간략하게 표시(--pretty  옵션 사용)
+Git log –onelinf : 로그 출력 시 커밋을 한 줄로 표시(해시도 앞자리 7글자만 출력)
+Git log –graph : 로그를 그래프 형태로 출력
+
+Git show : 가장 최근 커밋의 상세 정보 출력
+Git show [커밋 해시] : 해당 커밋의 상세 정보 출력
+Git show HEAD : HEAD가 참고하는 커밋의 상세 정보 출력
+Git show HEAD^^ : HEAD를 기준으로 3단계 이전의 커밋 정보 출력
+Git show HEAd ~n : HEAD를 기준으로 n단계 이전의 커밋 정보 출력
+
+Git diff : 최근 커밋과 변경 사항이 발생한 파일들의 내용 비교
+Git diff –staged : 최근 커밋과 스테이징된 파일 간의 변경 사항 출력
+Git diff [커밋 해시1] [커밋 해시2] : 두 커밋 사이의 파일 간 변경 사항 출력
+
+Git reset : Staging Area의 파일 전체를 언스테이징 상태로 되돌리기
+Git reset [파일 이름(또는 경로)] : 해당 파일(또는 경로)을 언스테이징 상태로 되돌리기
+
+Git commit –amend : 최근 커밋 수정하기
+Git commit –amend -m “[메시지]” : 해당 메시지로 커밋 수정하기
+
+Git checkout[커밋 해시] : 해당 커밋으로 파일 상태 변경
+Git checkout - : HEAD가 이전에 참조했던 커밋으로 상태 변경
+Git checkout master : HEAD가 master를 참조
+Git checkout HEAD~n: HEAD를 기준으로 n단계 이전 커밋으로 상태 변경
+
+Git reset[커밋 해시] : 해당 커밋으로 브랜치의 참조를 변경
+Git reset –hard[커밋 해시] : Working Directory, Staging Area, 커밋 모두 리셋
+Git reset –mixed[커밋 해시] : Working Directory 유지, Staging Area와 커밋은 리셋, default option
+Git reset –soft[커밋 해시] : Working Directory와 Staging Area 유지, 커밋 리셋
+Git reset HEAD^ : HEAD를 기준으로 직전의 커밋으로 리셋
+Git reset HEAD~n : HEAD를 기준으로 n단계 전 커밋으로 리셋
+
+Git reflog : HEAD가 참조한 커밋 이력을 출력
+
+Git remote : 현재 브랜치에 추가된 원격저장소 리스트 출력
+Git remote -v(--verbose) : 현재 브랜치에 추가된 원격저장소 리스트 출력(주소 포함)
+Git remote add[원격저장소 이름][원격저장소 주소]:해당 이름으로 원격저장소의 주소 등록
+Git remote rm[원격저장소 이름] : 해당 원격저장소를 등록리스트에서 삭제
+Git push -u(--set-upstream-to)[원격 저장소의 이름][로컬저장소의 브랜치]:로컬저장소의 브랜치가 원격저장소를 추적하도록 설정하고, 파일들을 원격저장소로 저장
+
+Git push[원격저장소 이름][로컬저장소 브랜치] : 로컬 브랜치의 변경사항을 원격 브랜치로 업로드
+Git push : upstream(-u) 설정 후 인자 생략 가능
+Git pull[원격 저장소 이름][로컬저장소 브랜치]:원격저장소의 정보를 현재 로컬 브랜치에 가져와서 병합(fetch+merge) ‘예를 들어 원격저장소의 브랜치가 origin/master이면, git pull origin master’
+Gti pull : upstream(-u) 설정 후 인자 생략 가능
+
+Git tag : 로컬저장소의 모든 태그를 조회
+Git tag[태그 이름] : 현재 커밋에 태그를 생성(Ligthweight 태그)
+Git tag[태그 이름][커밋 해시] : 해당 커밋에 태그를 생성(Lightweight 태그)
+Git tag -a  [태그 이름] -m”[메시지]”[커밋 해시]:메시지를 추가하여 태그 생성(Annotataed tag)
+Git tag -am[태그 이름]”[메시지]” : 현재 커밋에 메시지를 추가하여 태그 생성(Annotated tag)
+Git show[태그 이름]:해당 태그가 부착된 커밋의 상세정보 확인
+Git push –tags : 생성된 전체 태그를 원격저장소에 푸시(=git push origin –tags)
+Git push[태그 이름]: 해당 태그를 원격저장소에 푸시(= git push origin “[태그 이름]”)
+Git tag -d[태그 이름]:해당 태그 삭제
+Git push -d[태그 이름]:원격저장소에서 해당 태그 삭제
+
+Git revert[커밋 해시]:해당 커밋을 되돌리기
+Git revert –no-edit[커밋 해시] : 커밋 메시지 수정 없이 기본 메시지로 되돌리기
+Git revert -n[커밋 해시] : 커밋하지 않고 스테이징 상태로 되돌리기
+Git revert[커밋 해시1]..[커밋 해시2] : 해당 구간만큼 커밋 되돌리기, 커밋 해시1은 되돌려 지지 않음.
+
+Git clone[원격저장소 주소] : 원격저장소의 내용을 복제. 폴더 이름은 원격저장소 이름과 동일
+Git clone[원격저장소 주소][폴더 이름] : 해당 폴더 이름으로 원격저장소의 내용을 복제
+Git diff origin/master master : origin/master와 로컬저장소의 master 차이 비교
+Git merge –abort : 병합(merging) 작업 종료
+Git log –oneline –graph : 저장소의 커밋 이력을 한 줄로, 그래프를 추가하여 출력
+
+Git fetch [브랜치 이름] : 해당 브랜치의 기록된 커밋(작업 내용)을 가져오기
+Git merge [브랜치 이름]: 해당 브랜치의 작업 내용을 현재 브랜치에 병합하기
+
+Git blame [파일 이름] : 파일의 작성자 정보 확인
+Git blame[커밋 해시][파일 이름] : 해당 커밋에서 파일의 작성자 정보 확인
+Git blame -L [시작라인], [끝 라인][파일 이름] : 파일 안의 특정 구간의 작성자 정보만 출력
+Git blame -e [파일 이름] : 작성자 이름 대신 이메일 정보 표시
+Git blame -s [파일 이름]: 커밋 해시만 표시
+
+Git stash : 인덱스 영역에 트래킹되는 파일을 임시 영역에 저장하고, modified 부분을 Working Directory에서 제거, 기본명칭 WIP로 저장됨.
+Git stash -u : 새롭게 추가된 파일(untracked)도 함께 임시 영역에 저장
+Git stash save [저장 이름]: 저장 이름을 부여해서 저장
+Git stash -m “[메시지]” : 메시지를 기록하여 저장
+Git stash list : stash 기록 확인
+Git stash apply : 가장 최근의 작업 내용 불러오기
+Git stash apply [stash 인덱스]: 해당 인덱스에 해당되는 저장 내용 반영
+Git stash drop : 가장 최근의 stash 제거
+Git stash drop [stash 인덱스] : 해당 인덱스의 stash 삭제
+Git stash pop : 가장 최근의 작업 내용을 불러오고, stash 영역에서 삭제
+Git stash pop[stash 인덱스]: 해당 인덱스의 작업 내용을 불러오고, stash영역에서 삭제
+Git stash clear : stash 영역의 모든 내용 삭제
+
+Git branch : 브랜치 목록 표시
+Git branch [브랜치 이름] : 해당 브랜치 이름으로 브랜치 생성
+Git checkout[브랜치 이름] : 해당 브랜치로 전환
+Git chechout -b [브랜치 이름] : 브랜치 생성과 동시에 전환
+Git branch -m [브랜치 이름][새로운 브랜치 이름] : 브랜치 이름 변경
+Git branch -d [브랜치 이름] : 해당 브랜치 삭제
+
+Git merge [브랜치 이름] : 해당 브랜치의 작업 내용을 현재 브랜치에 병합
+
+Git merge –ff[브랜치 이름]:fast-forward 관계에 있으면 커밋을 생성하지 않고 현재 브랜치의 참조만 변경(default)
+Git merge –no-ff[브랜치 이름]:fast-forward 관계에 있어도 머지 커밋 생성
+Git merge –squash[브랜치 이름]:병합할 브랜치의 내용을 하나의 커밋에 합침. 병합할 브랜치 정보는 생략
+
+Git rebase[브랜치 이름]: 현재 브랜치가 해당 브랜치(브랜치 이름)부터 분기하도록 재배치
+Git rebase –continue : 충돌 수정 후 재배치 진행
+Git rebase –abort : rebase 취소
+
+Git cherry-pick[커밋 해시]:해당 커밋의 내용을 현재 브랜치에 추가. 뒤에 커밋 해시를 연속해서 입력하면 복수 추가 가능
+Git cherry-pick[시작 지점의 커밋 해시]…[끝 지점의 커밋 해시]:해당구간의 commit을 한번에 추가
+Git cherry-pick—abort : 충돌과 같은 상황이 발생했을 때 cherry-pick 취소
+Git cherry-pick—continue : 충돌 상황 해결 후 cherry-pick 진행
+
+Git push -u(--set-upstream-to) [원격저장소 이름][로컬 브랜치 이름] : 로컬저장소의 브랜치가 원격저장소를 추적하도록 설정하고 파일들을 원격저장소의 브랜치로 푸시
+Git push [원격저장소 이름][로컬 브랜치 이름]:로컬 저장소의 변경 사항을 원격저장소로 업로드
+Git push : 업스트림(-u)설정 후 인자 생략 가능
+
+#명령어 용도별 정리
+Setup
+- git init : 저장소 생성
+- git clone [원격저장소 url] : 해당 원격저장소의 내용을 복제하여 로컬저장소 생성
+- git config user.name “[작성자 이름]” : 작성자 이름 설정
+- git config user.email “[이메일 계정]” : 작성자 이메일 설정
+- git config --list : 저장소 설정 전체 출력
+- git config --get [설정 창목] : 일부 설정된 항목만 출력(git config --set user.name 등)
+- git help [커맨드 이름] : 도움말
+
+Stage & commit
+- git add [파일 이름] : 수정된 파일을 Staging Area 올리기
+- git add [디렉토리 이름] : 해당 디렉토리 내에 수정된 모든 파일을 스테이징 
+- git add . : Working Directory 내에 수정된 모든 파일을 스테이징(untracked 파일 제외)
+- git commit : 이력 저장, 커밋(commit)
+- git commit -m “[메시지]” : 메시지 편집기를 사용하지 않고 인라인으로 메시지를 추가하여 커밋
+- git commit am “[메시지]” : 스테이징(add)과 커밋을 일괄 진행
+
+Inspect
+git status
+- git status : 저장소 과일의 상태 정보 출력
+- git status -s : 파일 상태 정보를 간략하게 표시
+git log
+- git log : 저장소의 커밋 이력을 출력
+- git log –pretty=oneline : 커밋을 한 줄로 출력(--pretty 옵션 사용)
+- git log --oneline : 각 commit을 한 줄로 출력
+- git log d --decorate=full : 브랜치나 태그 정보를 상세히 출력
+- git log –graph : 그래프 형태로 출력
+git show
+- git show : 가장 최근 커밋 정보를 출력
+- git show [커밋 해시] : 해당 커밋의 정보 출력
+- git show HEAD : HEAD가 참조하는 커밋의 정보 출력
+- git show HEAD^^^ : HEAD를 기준으로 3단계 이전의 커잇 정보 출력
+- git Show HEAD-[n] : HEAD를 기준으로 n단계 이전의 커밋 정보 출력
+git diff
+- git diff : 최근 커밋과 변경 사항이 발생한(Unstaged) 파일들의 내용 비교
+- git diff --staged : 최근 커밋과 Staging Area의 파일 간의 변경 사항 출력
+- git diff [커밋 해시1] [커밋 해시2] : 두 커밋 간 파일의 변경 사항 출력
+
+checkout
+- git checkout [커밋 해시] : 해당 커밋으로 HEAD의 참조를 번경(Working Directory의 내용을 변경)
+- git checkout - : HEAD의 참조를 직전에 참조했던 커밋으로 변경
+- git checkout master : HEAD가 master를 참조
+- git checkout HEAD~n : 현재 HEAD의 참조를 기준으로 n단계 이전 커밋으로 참조를 변경
+
+Undoing changes
+- git reset : Staging Area의 파일 전체를 unstaged 상태로 되돌리기
+- git reset [파일 이름] : 해당 파일을 unstaged 상태로 되돌리기
+- git commit --amend : 최근 커밋을 수정하기
+- git commit --amend -m “[커밋 메시지]” : 해당 메시지로 커밋 수정하기
+- git reset [커밋 해시] : 해당 커밋으로 브랜치의 참조를 변경
+- git reset --hard [커밋 해시] : Working Directory, Staaing Area, 커밋 모두 되돌리기
+- git reset --mixed [커밋 해시] : Working Directory 유지, Staing Area와 커밋은 되돌리기(default)
+- git reset --soft [커밋 해시] : Working Directory와 Staging Area는 유지. 커밋은 되돌리기
+- git reset HEAD^ : HEAD를 기준으로 직전의 커밋으로 브랜치의 참조 변경
+- git reset HEAD~[정수] : HEAD를 기준으로 정수값 단계 전 커밋으로 브렌치의 참조 반경
+
+Setup
+- git branch : 브랜치 목물 표시
+- git branch [브랜치 이름] : 해당 브랜치 이름으로 브랜치 생성
+- git checkout [브랜치 이름] : 해당 브랜치로 전환
+- git checkout -b [브랜치 이름] : 브랜치 생성과 동시에 전환
+- git branch -m [브랜치 이름] [새로운 브랜치 아름] : 브랜치 이름 변경
+- git branch -d [브랜치 이름] : 해당 브랜치 삭제
+
+Merge. rewrite
+merge
+- git merge [브랜치 이름] : 현 브랜치에 해당 브랜치의 내용 병합
+- git merge -ff [브랜치 이름] : fast-forward 관계에 있으면 commit을 생성하지 않고 현재 브랜치의 참 조 값만 변경(default)
+- git merge --no-ff [브랜치 이름] : fast-forward 관계에 있어도 머지 커밋(merge commit) 생성
+- git merge --squash [브랜치 이름] : fast-forward 관계에 있어도 머지 커밋 생성. 브랜치 정보 생략
+- git rebase –abort : rebase 취소
+
+rebase
+- git rebase [브랜치 이름] : 현재 브랜치가 해당 브랜치(브랜치 이름)에부터 분기하도록 재배치
+- git rebase --continue : 충돌 수정 후 재배치 진행
+- git rebase –abort : rebase 취소
+
+cherry-pick
+- git cherry-pick [커밋 해시] : 해당 커밋의 내용을 현재 브랜치에 추가. 뒤에 커밋 해시를 연속 입력하면 복수로 추가 가능
+- git cherry-pick [시작 지정의 커밋 해시].. [끝 지점의 커밋 해시] : 해당 구간의 커밋을 한번에 추가
+- git cherry-pick --abort : 충돌이 발생했을 때 cherry-pick 취소
+- git cherry-pick --continue : 충돌 해결 후 cherry-pick 진행
+
+*2023.08.01 
+git push -f [원격저장소 이름][로컬 저장소 브랜치] : 강제 push, but 여러사람이 쓰는 원격저장소에서는 사용 지양, 혼자쓰는 레퍼지토리에서만 쓸 것, 아마 커밋 해시 순서가 꼬이는 것으로 예상됨.<-규현팀장님 say
