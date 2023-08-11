@@ -6,10 +6,10 @@ int main(void)
 	double num1, num2;
 	double result;
 	
-	printf("1.µ¡¼À 2.»¬¼À 3.°ö¼À 4.³ª´°¼À \n");
-	printf("¼±ÅÃ? ");
+	printf("1.?? 2.?? 3.?? 4.??? \n");
+	printf("??? ");
 	scanf("%d", &opt);
-	printf("µÎ °³ÀÇ ½Ç¼ö ÀÔ·Â: ");
+	printf("? ?? ?? ?? : ");
 	scanf("%lf %lf", &num1, &num2);
 	
 	if(opt==1)
@@ -21,6 +21,6 @@ int main(void)
 	else
 		result = num1 / num2;
 
-	printf("°á°ú: %f \n", result);
+	printf("??: %f \n", result);
 	return 0;
 }
