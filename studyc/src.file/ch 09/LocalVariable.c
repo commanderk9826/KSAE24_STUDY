@@ -25,3 +25,7 @@ int main(void)
 	printf("main num: %d \n", num);
 	return 0;     // main의 num이 유효한 마지막 문장
 }
+/*실행결과
+SimpleFuncOne num: 11 
+num1 & num2: 21 29 
+main num: 17 */

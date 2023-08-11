@@ -8,3 +8,9 @@ int main(void)
 	printf("%d %d \n", num1, num2);
 	return 0;
 }
+
+/*실행결과 
+	12345
+	I love my home
+	6 15	
+*/

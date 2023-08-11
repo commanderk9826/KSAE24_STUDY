@@ -17,3 +17,12 @@ int main(void)
 	printf("9! = %d \n", Factorial(9));
 	return 0;
 }
+
+/*
+실행결과
+1! = 1
+2! = 2
+3! = 6
+4! = 24
+9! = 362880
+*/

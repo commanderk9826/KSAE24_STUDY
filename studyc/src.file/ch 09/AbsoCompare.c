@@ -1,14 +1,13 @@
 #include <stdio.h>
-int AbsoCompare(int num1, int num2);  // 절대값이 큰 정수 반환 
-int GetAbsoValue(int num);   // 전달인자의 절대값을 반환
+int AbsoCompare(int, int);  // 절대값이 큰 정수 반환 
+int GetAbsoValue(int);   // 전달인자의 절대값을 반환
 
 int main(void)
 {
 	int num1, num2;
 	printf("두 개의 정수 입력: ");
 	scanf("%d %d", &num1, &num2);
-	printf("%d와 %d중 절대값이 큰 정수: %d \n", 
-		num1, num2, AbsoCompare(num1, num2));	
+	printf("%d와 %d중 절대값이 큰 정수: %d \n", num1, num2, AbsoCompare(num1, num2));	
 	return 0;
 }
 
@@ -27,3 +26,8 @@ int GetAbsoValue(int num)
 	else
 		return num;
 }
+
+/*실행결과
+두 개의 정수 입력: -5 8
+-5와 8중 절대값이 큰 정수: 8
+*/
