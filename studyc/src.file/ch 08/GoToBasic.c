@@ -13,9 +13,9 @@ int main(void)
 	else 
 		goto OTHER; 
 
-ONE:
+ONE:											//위치를 표시하는 ONE 레이블
 	printf("1을 입력하셨습니다! \n");
-	goto END;
+	goto END;									// 레이블 END로 무조건 이동!
 TWO:
 	printf("2를 입력하셨습니다! \n");
 	goto END;

@@ -15,3 +15,9 @@ int main(void)
 	printf("string: %s \n", str);
 	return 0;
 }
+/*실행결과
+string : I like C programming
+string : I like C
+string : I like
+string : I
+*/
