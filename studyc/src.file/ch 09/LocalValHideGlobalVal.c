@@ -16,3 +16,8 @@ int Add(int val)
 	num += val;
 	return num;
 }
+
+/*실행결과
+num: 12
+num: 14
+*/

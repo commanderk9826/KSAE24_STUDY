@@ -14,3 +14,6 @@ int main(void)
 	printf("num1:%d, num2:%d \n", num1, num2);
 	return 0;
 }
+/*실행결과
+num1:130, num2:70
+*/
