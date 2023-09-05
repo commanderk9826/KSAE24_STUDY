@@ -1,0 +1,4 @@
+../Core/Src/can_it.c:32:6:CAN_RX_Header_defunc	8	static
+../Core/Src/can_it.c:48:6:CAN_TX_Header_defunc	4	static
+../Core/Src/can_it.c:57:6:CAN_Error_Handler	8	static
+../Core/Src/can_it.c:100:6:HAL_CAN_RxFifo0MsgPendingCallback	32	static
