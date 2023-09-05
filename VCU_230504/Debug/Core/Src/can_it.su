@@ -1,0 +1,5 @@
+../Core/Src/can_it.c:27:6:CAN_Filter_defunc	16	static
+../Core/Src/can_it.c:43:6:CAN_TX_Header_defunc	16	static
+../Core/Src/can_it.c:52:6:CAN_Error_Handler	16	static
+../Core/Src/can_it.c:75:6:Transmit_CAN	24	static
+../Core/Src/can_it.c:84:6:HAL_CAN_RxFifo0MsgPendingCallback	24	static
