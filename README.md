@@ -31,4 +31,5 @@ git commit -m "Add [날짜] study"
 
 git push
 
+끝!
 
